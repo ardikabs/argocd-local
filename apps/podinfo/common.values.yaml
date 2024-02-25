@@ -7,7 +7,7 @@ app:
 
   containerPorts:
     http:
-      port: 9898
+      containerPort: 9898
       protocol: TCP
 
   service:
