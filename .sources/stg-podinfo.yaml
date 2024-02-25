@@ -21,8 +21,8 @@ spec:
       - PruneLast=true # Allow the ability for resource pruning to happen as a final, implicit wave of a sync operation
       - ApplyOutOfSync=true
       - RespectIgnoreDifferences=true
-    ignoreDifferences:
-      - group: apps
-        kind: Deployment
-        jsonPointers:
-          - /spec/template/metadata/annotations/kubectl.kubernetes.io~1restartedAt
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        - /spec/template/metadata/annotations/kubectl.kubernetes.io~1restartedAt
