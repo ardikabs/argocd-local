@@ -15,19 +15,6 @@ app:
 
   terminationGracePeriodSeconds: 30
 
-  containerPorts:
-    http:
-      port: 9898
-      protocol: TCP
-
-  service:
-    enabled: true
-    type: ClusterIP
-    ports:
-      http:
-        port: 80
-        protocol: TCP
-
   rollingUpdate:
     maxSurge: 30%
     maxUnavailable: 1
