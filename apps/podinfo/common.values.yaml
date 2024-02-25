@@ -1,0 +1,56 @@
+labels:
+  domain: local
+  team: infrastructure
+
+app:
+  enabled: true
+
+  containerPorts:
+    http:
+      port: 9898
+      protocol: TCP
+
+  service:
+    enabled: true
+    type: ClusterIP
+    ports:
+      http:
+        port: 80
+        protocol: TCP
+
+  startupProbe:
+    enabled: true
+    httpGet:
+      path: /healthz
+      port: 9898
+    failureThreshold: 20
+    initialDelaySeconds: 5
+    periodSeconds: 10
+    timeoutSeconds: 1
+
+  livenessProbe:
+    enabled: true
+    httpGet:
+      path: /healthz
+      port: 9898
+    failureThreshold: 3
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 1
+
+  readinessProbe:
+    enabled: true
+    httpGet:
+      path: /readyz
+      port: 9898
+    failureThreshold: 3
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 1
+
+  securityContext: {}
+
+  autoscaling:
+    enabled: false

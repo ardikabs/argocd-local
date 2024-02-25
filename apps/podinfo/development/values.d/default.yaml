@@ -1,0 +1,44 @@
+global:
+  imagePullSecrets: []
+
+  image:
+    repository: stefanprodan/podinfo
+    pullPolicy: IfNotPresent
+    tag: 6.3.3
+
+  channel: stable
+
+app:
+  enabled: true
+
+  replicas: 1
+
+  terminationGracePeriodSeconds: 30
+
+  containerPorts:
+    http:
+      port: 9898
+      protocol: TCP
+
+  service:
+    enabled: true
+    type: ClusterIP
+    ports:
+      http:
+        port: 80
+        protocol: TCP
+
+  rollingUpdate:
+    maxSurge: 30%
+    maxUnavailable: 1
+
+  resources:
+    limits:
+      cpu: 100m
+      memory: 90Mi
+    requests:
+      cpu: 100m
+      memory: 90Mi
+
+  ingress:
+    enabled: false
