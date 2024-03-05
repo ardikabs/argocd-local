@@ -11,6 +11,9 @@ global:
 app:
   enabled: true
 
+  deploymentLabels:
+    critical: true
+
   replicas: 1
 
   terminationGracePeriodSeconds: 30
