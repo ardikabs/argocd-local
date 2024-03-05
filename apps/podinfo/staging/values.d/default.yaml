@@ -21,11 +21,11 @@ app:
 
   resources:
     limits:
-      cpu: 100m
-      memory: 90Mi
+      cpu: 110m
+      memory: 100Mi
     requests:
-      cpu: 100m
-      memory: 90Mi
+      cpu: 110m
+      memory: 100Mi
 
   ingress:
     enabled: false
