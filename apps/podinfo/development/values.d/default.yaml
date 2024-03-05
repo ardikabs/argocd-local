@@ -12,7 +12,7 @@ app:
   enabled: true
 
   deploymentLabels:
-    critical: true
+    critical: "true"
 
   replicas: 1
 
