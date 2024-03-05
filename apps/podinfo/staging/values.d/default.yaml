@@ -13,6 +13,9 @@ app:
 
   replicas: 1
 
+  deploymentLabels:
+    critical: "true"
+
   terminationGracePeriodSeconds: 30
 
   rollingUpdate:
