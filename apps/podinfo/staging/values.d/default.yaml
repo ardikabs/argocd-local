@@ -25,10 +25,10 @@ app:
   resources:
     limits:
       cpu: 100m
-      memory: 100Mi
+      memory: 90Mi
     requests:
       cpu: 100m
-      memory: 100Mi
+      memory: 90Mi
 
   ingress:
     enabled: false
